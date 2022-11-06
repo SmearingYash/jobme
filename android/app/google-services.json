@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "904082889818",
+    "project_id": "jobme-app",
+    "storage_bucket": "jobme-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904082889818:android:2849c840cf17f61d8b0c63",
+        "android_client_info": {
+          "package_name": "yash.jobme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904082889818-mu4mu5ip17lgpa9s0a64s2snjftchs0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfMpQVmit5BZGQhdDuOQsz3kHyYMNjrrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904082889818-mu4mu5ip17lgpa9s0a64s2snjftchs0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
