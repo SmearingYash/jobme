@@ -260,7 +260,8 @@ _showTaskCategoriesDialog({required Size size})
 
  void getMyData() async
  {
-   final DocumentSnapshot userDoc =await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid)
+   final DocumentSnapshot userDoc =await FirebaseFirestore.instance.collection('users')
+       .doc(FirebaseAuth.instance.currentUser!.uid)
        .get();
    setState(() {
      name = userDoc.get('name');
@@ -274,6 +275,7 @@ _showTaskCategoriesDialog({required Size size})
     super.initState();
     getMyData();
   }
+
 
   @override
   Widget build(BuildContext context) {

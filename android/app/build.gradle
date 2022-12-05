@@ -71,6 +71,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.squareup.okhttp3:okhttp:4.9.3"
     implementation "com.google.firebase:firebase-database-ktx"
+    implementation "androidx.multidex:multidex:2.0.1"
+
 
 }
 apply plugin: 'com.google.gms.google-services'

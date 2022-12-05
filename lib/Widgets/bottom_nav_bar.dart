@@ -6,9 +6,12 @@ import 'package:jobme/Jobs/upload_job.dart';
 import 'package:jobme/Search/profile_category.dart';
 import 'package:jobme/Search/search_category.dart';
 
+import '../user_state.dart';
+
 class BottomNavigationBarForApp extends StatelessWidget {
 
   int indexNum = 0;
+  // ignore: use_key_in_widget_constructors
   BottomNavigationBarForApp({required this.indexNum});
 
   void _logout(context)
@@ -48,11 +51,18 @@ class BottomNavigationBarForApp extends StatelessWidget {
             ),
             actions: [
               TextButton(
-                onPressed: (){},
-                child: const Text('no',style: TextStyle(color: Colors.green,fontSize: 18),),
+                onPressed: (){
+                  Navigator.canPop(context) ? Navigator.pop(context):null;
+
+                },
+                child: const Text('No',style: TextStyle(color: Colors.green,fontSize: 18),),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  _auth.signOut();
+                  Navigator.canPop(context) ? Navigator.pop(context):null;
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =>UserState()));
+                },
                 child: const Text('Yes',style: TextStyle(color: Colors.green,fontSize: 18),),
               ),
             ],
@@ -97,7 +107,14 @@ class BottomNavigationBarForApp extends StatelessWidget {
           }
         else if(index ==3)
         {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> ProfileScreen()));
+          final FirebaseAuth _auth =FirebaseAuth.instance;
+          final User?user = _auth.currentUser;
+          final String uid = user!.uid;
+
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> ProfileScreen(
+              userID:uid,
+          )));
+
         }
         else if(index ==4)
         {
